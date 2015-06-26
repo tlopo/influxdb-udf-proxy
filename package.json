@@ -1,0 +1,30 @@
+{
+  "name": "influxdb-udf-proxy",
+  "version": "0.0.1",
+  "description": "User defined functions proxy for influxdb",
+  "main": "main.js",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "request": "^2.58.0",
+    "underscore": "^1.8.3",
+    "winston": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlopo/influxdb-udf-proxy.git"
+  },
+  "keywords": [
+    "influxdb"
+  ],
+  "author": "Tiago Lopo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlopo/influxdb-udf-proxy/issues"
+  },
+  "homepage": "https://github.com/tlopo/influxdb-udf-proxy#readme"
+}
