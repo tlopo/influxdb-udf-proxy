@@ -13,4 +13,12 @@ The main reason I wrote this proxy is that influxdb does not support timeshiftin
 
 Another problem, is that if you want your dashboard to be up-to-date with new servers being added and removed, you wan to use regex in your query, while the regexes is quite powerful it does not support negation, say you have the following metric: `AWS.WEB_SERVERS.WEB01.statusCode.200`  and you have many web servers being added and removed by autoscaling process. 
 
+If you want the sum of all statusCode.200 for WEBs belonging to WEB_SERVERS group in AWS, you have the following query: 
 
+`select sum(value) from merge(AWS.WEB_SERVERS.WEB*.statusCode.200) where $timeFilter group by time($interval) order asc` 
+
+But what if you want exclude the WEB_TEST? you can't at least not yet.
+
+#Installation
+
+#Usage
