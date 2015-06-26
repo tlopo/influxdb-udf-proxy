@@ -19,7 +19,7 @@ If you want the sum of all statusCode.200 for WEBs belonging to WEB_SERVERS grou
 
 But what if you want exclude the WEB_TEST? you can't at least not yet.
 
-#Installation
+##Installation
 Steps to install:
 1. Clone from github
 2. Change configuration 
@@ -31,7 +31,7 @@ $ vim influxdb-udf-proxy/config.js
 $ cd influxdb-udf-proxy; node .
 ```
 
-#Usage
+##Usage
 
 UDFs can be called very easily, it follows the following syntax:
 
@@ -42,4 +42,45 @@ For instance the timeshift UDF looks like:
 ```
 @timeshift:{"shift":86400000} select mean(value) from "AWS.WEB_SERVERS.WEB01.statusCode.200" where time > now()-300s group by time(1m)
 ```
+
+## New functions
+
+To add a new udf it's just a matter of dropping a .js file under udf directory, the file should look like this:
+
+```
+var request = require('request');
+var global = require('./global');
+var log = require('./logger');
+
+// Simple hello world udf
+udf.helloWorld = function (opts,influxQuery,req,res){
+	log.info("helloWorld triggered");
+	res.send("Hello World!");
+}
+```
+
+Take a look at ![timeshift.js](https://github.com/tlopo/influxdb-udf-proxy/blob/master/udf/timeshift.js) for a more advanced example.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
