@@ -40,6 +40,6 @@ UDFs can be called very easily, it follows the following syntax:
 For instance the timeshift UDF looks like:
 
 ```
-@timeshift:{"shift":86400000} select mean(value) from "AWS.PASSTHRU.PASSTHRU06.web.hits" where time > now()-300s group by time(1m)
+@timeshift:{"shift":86400000} select mean(value) from "AWS.WEB_SERVERS.WEB01.statusCode.200" where time > now()-300s group by time(1m)
 ```
 
