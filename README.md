@@ -11,7 +11,7 @@ The main reason I wrote this proxy is that influxdb does not support timeshiftin
 ![](https://sc-cdn.scaleengine.net/i/c04a0e5a50d0074d4d7ae7b3767aafd4.png)
 
 
-Another problem, is that if you want your dashboard to be up-to-date with new servers being added and removed, you wan to use regex in your query, while the regexes is quite powerful it does not support negation, say you have the following metric: `AWS.WEB_SERVERS.WEB01.statusCode.200`  and you have many web servers being added and removed by autoscaling process. 
+Another problem, is that if you want your dashboard to be up-to-date with new servers being added and removed, you want to use regex in your queries. While the regexes is quite powerful it does not support negation, say you have the following metric: `AWS.WEB_SERVERS.WEB01.statusCode.200`  and you have many web servers being added and removed by autoscaling process. 
 
 If you want the sum of all statusCode.200 for WEBs belonging to WEB_SERVERS group in AWS, you have the following query: 
 
@@ -34,7 +34,7 @@ $ cd influxdb-udf-proxy; node .
 
 ##Usage
 
-UDFs can be called very easily, it follows the following syntax:
+UDFs can be called very easily, it follows the syntax below:
 
 `@udfName:{<opts>} query`
 
@@ -63,7 +63,11 @@ udf.helloWorld = function (opts,influxQuery,req,res){
 Take a look at ![timeshift.js](https://github.com/tlopo/influxdb-udf-proxy/blob/master/udf/timeshift.js) for a more advanced example.
 
 
+## Included UDFs
 
+### timeshift
+
+### filters
 
 
 
