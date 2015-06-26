@@ -1,6 +1,6 @@
 # influxdb-udf-proxy
 
-##A user defined proxy for influxdb
+##A user defined functions proxy for influxdb
 
 As of this writing, as far as I know inflxudb does not yet support stored procedure like functions, and Grafana does not support functions instead of raw queries, that's the motiviation for influxdb-udf-proxy.
 
