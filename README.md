@@ -20,5 +20,26 @@ If you want the sum of all statusCode.200 for WEBs belonging to WEB_SERVERS grou
 But what if you want exclude the WEB_TEST? you can't at least not yet.
 
 #Installation
+Steps to install:
+1. Clone from github
+2. Change configuration 
+3. Run from its directory 
+
+```
+$ git clone https://github.com/tlopo/influxdb-udf-proxy
+$ vim influxdb-udf-proxy/config.js
+$ cd influxdb-udf-proxy; node .
+```
 
 #Usage
+
+UDFs can be called very easily, it follows the following syntax:
+
+`@udfName:{<opts>} query`
+
+For instance the timeshift UDF looks like:
+
+```
+@timeshift:{"shift":86400000} select mean(value) from "AWS.PASSTHRU.PASSTHRU06.web.hits" where time > now()-300s group by time(1m)
+```
+
