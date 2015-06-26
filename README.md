@@ -21,6 +21,7 @@ But what if you want exclude the WEB_TEST? you can't at least not yet.
 
 ##Installation
 Steps to install:
+
 1. Clone from github
 2. Change configuration 
 3. Run from its directory 
