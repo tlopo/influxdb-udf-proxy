@@ -2,7 +2,7 @@
 
 ##A user defined functions proxy for influxdb
 
-As of this writing, inflxudb does not yet support [stored procedure like functions](https://github.com/influxdb/influxdb/issues/68) , and Grafana does not support functions instead of raw queries, that's the motiviation for influxdb-udf-proxy.
+As of this writing, ![inflxudb](https://github.com/influxdb/influxdb) does not yet support [stored procedure like functions](https://github.com/influxdb/influxdb/issues/68) , and ![Grafana](https://github.com/grafana/grafana) does not support functions instead of raw queries, that's the motiviation for influxdb-udf-proxy.
 
 ## Problems it solves
 
